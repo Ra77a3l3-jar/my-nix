@@ -3,10 +3,10 @@
 {
 
     imports = [
-        #./env.nix
+        ./env.nix
         ./nix.nix
         ./alias.nix
-        #./xdg.nix
+        ./xdg.nix
     ];
     
 }
