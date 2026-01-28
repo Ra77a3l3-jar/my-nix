@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo dnf install -y gnome-tweaks gnome-extension-manager
+sudo dnf install -y gnome-tweaks
