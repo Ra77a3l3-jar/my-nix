@@ -59,11 +59,6 @@ in
         exec = "kitty";
       };
     };
-
-    home.packages = with pkgs; [
-      gnome-extension-manager
-      gnome-tweaks
-      dconf-editor
-    ];
+    
   };
 }
