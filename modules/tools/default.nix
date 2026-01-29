@@ -9,6 +9,7 @@
         ./fzf.nix
         ./bat.nix
         ./yazi.nix
+        ./common.nix
     ];
     
 }
