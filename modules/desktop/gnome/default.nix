@@ -8,9 +8,9 @@
   ];
 
   desktop.gnome = {
-    uiFont = "Caskaydia Mono Nerd Font";
-    documentFont = "Caskaydia Mono Nerd Font";
-    monoFont = "Caskaydia Mono Nerd Font";
+    uiFont = "Fira Code Nerd Font";
+    documentFont = "Fira Code Nerd Font";
+    monoFont = "Fira Code Nerd Font";
     fontSize = 13;
   };
 }
