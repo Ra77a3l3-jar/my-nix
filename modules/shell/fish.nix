@@ -16,7 +16,7 @@
       
       if type -q zellij
         if not set -q ZELLIJ
-          # exec zellij
+          exec zellij
         end
       end
     '';
