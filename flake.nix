@@ -37,6 +37,33 @@
     in
     {
       homeConfigurations = {
+        # School/Travel laptop configuration
+        "raffaele@school-laptop" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          
+          extraSpecialArgs = { 
+            inherit inputs pkgs-unstable zen-browser nixvim;
+          };
+          
+          modules = [
+            ./hosts/school-laptop/home.nix
+          ];
+        };
+        
+        # Personal PC configuration
+        "raffaele@personal-pc" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          
+          extraSpecialArgs = { 
+            inherit inputs pkgs-unstable zen-browser nixvim;
+          };
+          
+          modules = [
+            ./hosts/personal-pc/home.nix
+          ];
+        };
+        
+        # Legacy alias (keep for backward compatibility)
         "raffaele" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           

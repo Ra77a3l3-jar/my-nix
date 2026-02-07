@@ -2,8 +2,7 @@
 
 {
   home.shellAliases = {
-    hms = "home-manager switch --flake ~/.config/nix-config";
-    hmb = "home-manager build --flake ~/.config/nix-config";
+    # Hms and hmb are defined in each host's home.nix for machine-specific configs
     hmu = "nix flake update ~/.config/nix-config";
     hmg = "nix-collect-garbage -d";
     hml = "home-manager generations";
