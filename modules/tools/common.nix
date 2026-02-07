@@ -9,6 +9,7 @@
     jq
     btop
     tldr
+    glow
   ];
   
 }
