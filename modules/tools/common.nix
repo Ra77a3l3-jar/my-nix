@@ -7,7 +7,6 @@
     fd
     ripgrep
     jq
-    btop
     tldr
     glow
   ];
