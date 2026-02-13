@@ -12,7 +12,7 @@
     themeFile = "VibrantInk";
 
     font = {
-      name = "Ubuntu Nerd Font";
+      name = "Jetbrains Mono Nerd Font";
       size = 13;
     };
     
