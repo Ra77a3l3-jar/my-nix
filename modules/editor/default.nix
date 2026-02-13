@@ -3,7 +3,8 @@
 {
 
     imports = [
-      ./helix/default.nix  
+      ./helix/default.nix
+      ./common.nix
     ];
     
 }
