@@ -9,6 +9,8 @@
       
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/.nix-profile/bin
+      fish_add_path /usr/local/cuda-13.1/bin
+      set -x LD_LIBRARY_PATH /usr/local/cuda-13.1/lib64 $LD_LIBRARY_PATH
       
       if type -q zoxide
         zoxide init fish | source

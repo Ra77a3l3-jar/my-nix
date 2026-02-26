@@ -4,7 +4,7 @@
 
   imports = [
     ./c.nix
-    ./rust.nix
+    #./rust.nix
     ./python.nix
   ];
   
