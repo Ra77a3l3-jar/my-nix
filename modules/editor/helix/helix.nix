@@ -6,12 +6,13 @@
     package = pkgs-unstable.helix;
 
     settings = {
-       theme = "base16_black_metal_bathory";
+       theme = "aurara";
       
       editor = {
         scrolloff = 999;
         line-number = "relative";
         bufferline = "multiple";
+        mouse = false;
         
         true-color = true;
         color-modes = true;
