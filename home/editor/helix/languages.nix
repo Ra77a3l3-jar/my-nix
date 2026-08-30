@@ -128,6 +128,14 @@
           unit = "    ";
         };
       }
+
+      {
+        name = "nasm";
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+      }
     ];
   };
 }
