@@ -13,6 +13,7 @@
   imports = [
     ../../home/core/default.nix
     ../../home/desktop/default.nix
+    ../../home/apps/default.nix
     ../../home/terminal/default.nix
     ../../home/shell/default.nix
     ../../home/editor/default.nix

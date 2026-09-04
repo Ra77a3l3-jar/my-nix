@@ -50,6 +50,8 @@
       url = "github:Ra77a3l3-jar/herdnix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    sonora.url = "github:Ra77a3l3-jar/sonora/feat/home-manager-module";
   };
 
   outputs =
