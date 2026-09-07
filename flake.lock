@@ -406,16 +406,15 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1788539871,
-        "narHash": "sha256-sYuNPPKit5AovEY6MsttxE1liLxqU4j12C83HxImk4k=",
-        "owner": "Ra77a3l3-jar",
+        "lastModified": 1788774902,
+        "narHash": "sha256-dZPnyBpnsCjnM/z/qEb7g3gh387ydL2/9N6diVhirFA=",
+        "owner": "sonorahq",
         "repo": "sonora",
-        "rev": "0eddc9b8db541704d68447bd1d1b4961cf3ffb5c",
+        "rev": "767c41bdb7a0cc1ac9678c95bd0c295f8108c26b",
         "type": "github"
       },
       "original": {
-        "owner": "Ra77a3l3-jar",
-        "ref": "feat/home-manager-module",
+        "owner": "sonorahq",
         "repo": "sonora",
         "type": "github"
       }
