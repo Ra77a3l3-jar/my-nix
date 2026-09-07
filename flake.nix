@@ -82,6 +82,18 @@
         inherit system;
         config.allowUnfree = true;
       };
+      extraSpecialArgs = {
+        inherit
+          inputs
+          pkgs-unstable
+          zen-browser
+          neovim-nvf
+          helix-steel
+          nhx
+          herdnix
+          ;
+        inherit system;
+      };
     in
     {
       devShells =
@@ -94,46 +106,36 @@
           ${system} = shells;
         };
 
-      homeConfigurations = {
-        # School/Travel laptop configuration
-        "raffaele@bobasek" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          extraSpecialArgs = {
-            inherit
-              inputs
-              pkgs-unstable
-              zen-browser
-              neovim-nvf
-              helix-steel
-              nhx
-              herdnix
-              ;
-            system = "x86_64-linux";
+      nixosConfigurations = {
+        bobasek = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs pkgs-unstable;
           };
-
           modules = [
-            ./hosts/bobasek/home.nix
+            ./hosts/bobasek/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+                extraSpecialArgs = extraSpecialArgs // {
+                  isNixOS = true;
+                };
+                users.raffaele = import ./hosts/bobasek/home.nix;
+              };
+            }
           ];
         };
+      };
 
-        # Personal PC configuration
+      homeConfigurations = {
         "raffaele@legion" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-
-          extraSpecialArgs = {
-            inherit
-              inputs
-              pkgs-unstable
-              zen-browser
-              neovim-nvf
-              helix-steel
-              nhx
-              herdnix
-              ;
-            system = "x86_64-linux";
+          extraSpecialArgs = extraSpecialArgs // {
+            isNixOS = false;
           };
-
           modules = [
             ./hosts/legion/home.nix
           ];

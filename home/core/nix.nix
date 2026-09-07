@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, isNixOS, ... }:
 
 {
   nix = {
@@ -10,11 +10,11 @@
     };
   };
 
+  targets.genericLinux.enable = !isNixOS;
+}
+// lib.optionalAttrs (!isNixOS) {
   nixpkgs.config = {
     allowUnfree = true;
     nvidia.acceptLicense = true;
   };
-
-  # Critical to load enviorments on login
-  targets.genericLinux.enable = true;
 }
