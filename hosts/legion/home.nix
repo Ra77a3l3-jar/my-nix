@@ -9,6 +9,14 @@
   ...
 }:
 
+let
+  nvidiaIcd = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
+  steam = pkgs.writeShellScriptBin "steam" ''
+    unset VK_ICD_FILENAMES
+    unset VK_DRIVER_FILES
+    exec /usr/bin/steam "$@"
+  '';
+in
 {
   imports = [
     ../../home/core/default.nix
@@ -40,9 +48,26 @@
     };
   };
 
-  # nix Vulkan apps (zed, ...) don't scan /run/opengl-driver for ICDs;
-  # point them at the driver's Vulkan ICD.
-  home.sessionVariables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
+  # Nix Vulkan apps (zed, sonora, ...) don't scan /run/opengl-driver for ICDs.
+  # This override is nix-only: Steam is wrapped below so Proton keeps Fedora's ICD.
+  home.sessionVariables.VK_ICD_FILENAMES = nvidiaIcd;
+
+  xdg.desktopEntries.steam = {
+    name = "Steam";
+    exec = "${steam}/bin/steam %U";
+    icon = "steam";
+    terminal = false;
+    categories = [
+      "Network"
+      "FileTransfer"
+      "Game"
+    ];
+    mimeType = [
+      "x-scheme-handler/steam"
+      "x-scheme-handler/steamlink"
+    ];
+    prefersNonDefaultGPU = true;
+  };
 
   # Machine-specific aliases for home-manager
   home.shellAliases = {
@@ -60,6 +85,7 @@
       btop
     ])
     ++ [
+      steam
       zen-browser.packages.${system}.default
     ];
 
