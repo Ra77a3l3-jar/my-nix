@@ -14,7 +14,10 @@ let
   steam = pkgs.writeShellScriptBin "steam" ''
     unset VK_ICD_FILENAMES
     unset VK_DRIVER_FILES
-    exec /usr/bin/steam "$@"
+    if [ -x /usr/bin/steam ]; then
+      exec /usr/bin/steam "$@"
+    fi
+    exec "${config.home.homeDirectory}/.local/share/Steam/steam.sh" "$@"
   '';
 in
 {
