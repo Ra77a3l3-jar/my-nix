@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../nixos/core
     ../../nixos/desktop
+    ../../nixos/apps
   ];
 
   networking.hostName = "bobasek";

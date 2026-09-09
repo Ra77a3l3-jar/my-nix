@@ -1,0 +1,1 @@
+-- Hypridle, and Quickshell will be launched here
