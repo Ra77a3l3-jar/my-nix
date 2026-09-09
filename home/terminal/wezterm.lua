@@ -8,7 +8,7 @@ end)
 
 return {
   font = wezterm.font_with_fallback({
-    { family = "JetBrains Mono Nerd Font", weight = "Bold" },
+    { family = "JetBrainsMono Nerd Font", weight = "Bold" },
     { family = "Fira Code", weight = "Regular" },
   }),
   font_size = 13,
