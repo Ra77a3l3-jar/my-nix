@@ -2,7 +2,10 @@
 
 {
   imports =
-    lib.optionals (!isNixOS) [
+    [
+      ./gnome/theme.nix
+    ]
+    ++ lib.optionals (!isNixOS) [
       ./gnome/default.nix
     ]
     ++ lib.optionals isNixOS [
