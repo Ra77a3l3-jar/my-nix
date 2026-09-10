@@ -406,11 +406,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1788774902,
-        "narHash": "sha256-dZPnyBpnsCjnM/z/qEb7g3gh387ydL2/9N6diVhirFA=",
+        "lastModified": 1788952916,
+        "narHash": "sha256-tKHiM4ocYw+pbZlKPZUm0eXhqvp+H1tb3J86/4dpaqw=",
         "owner": "sonorahq",
         "repo": "sonora",
-        "rev": "767c41bdb7a0cc1ac9678c95bd0c295f8108c26b",
+        "rev": "e84ba11115f0ef1b9557313c08969da91235802d",
         "type": "github"
       },
       "original": {
